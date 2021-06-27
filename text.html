@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+function countLines(theArea){
+var theLines = theArea.value.replace((new RegExp(".{"+theArea.cols+"}","g")),"\n").split("\n");
+if(theLines[theLines.length-1]=="") theLines.length--;
+theArea.form.lineCount.value = theLines.length;
+}
+</script>
+</head>
+<body>
+<form>
+<textarea name="myText" onKeyUp="countLines(this)" cols="10" rows="10">
+</textarea>
+<br>
+Lines:
+<input type=text name="lineCount" size="2" value="0">
+</form>
+</body>
+</html>
